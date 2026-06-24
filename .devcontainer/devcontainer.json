@@ -1,0 +1,19 @@
+{
+  "name": "Kali Linux Full Environment",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y xauth && mkdir -p scripts configs wordlists outputs",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.remote-explorer",
+        "ms-vscode.remote-ssh"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "root",
+  "forwardPorts": [5901, 22]
+}
